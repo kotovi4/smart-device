@@ -1,0 +1,23 @@
+.promo {
+  display: flex;
+  margin: -118px 0 auto;
+  padding-top: 120px;
+  height: 878px;
+  background-color: $promo-bg-color;
+  background: url("../img/promo-image-bg@1x.png") top center no-repeat;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background: url("../img/promo-image-bg@2x.png") cover;
+  }
+
+  @media (max-width: $tablet-width) {
+    height: 685px;
+  }
+}
+
+.promo__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 1440px;
+}
