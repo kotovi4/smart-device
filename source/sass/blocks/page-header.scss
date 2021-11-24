@@ -11,6 +11,10 @@
   @media (max-width: $tablet-width) {
     padding: 20px 25px;
   }
+
+  @media (max-width: $mobile-width) {
+    padding: 17px;
+  }
 }
 
 .page-header__icon--mobile {
@@ -43,6 +47,10 @@
   @media (max-width: $tablet-width) {
     margin-left: 34px;
   }
+
+  @media (max-width: $mobile-width) {
+    margin-left: 23px;
+  }
 }
 
 .page-header__icon {
@@ -50,6 +58,15 @@
     margin-top: -7px;
     width: 24px;
     height: 24px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: -4px;
+
+    &--email {
+      width: 26px;
+      height: 19px;
+    }
   }
 }
 
