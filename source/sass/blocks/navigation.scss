@@ -1,0 +1,33 @@
+.navigation h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: $promo-bg-color;
+}
+
+.navigation ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  height: 100px;
+}
+
+.navigation li {
+  margin-right: 65px;
+}
+
+.navigation a {
+  font-family: $font-default;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  color: $promo-bg-color;
+  opacity: 0.5;
+}

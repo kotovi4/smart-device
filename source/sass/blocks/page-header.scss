@@ -1,5 +1,5 @@
 .page-header {
-  position: relative;
+  // position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,6 +7,7 @@
   padding: 31px 25px;
   width: 100%;
   max-width: 1460px;
+  z-index: 1;
 
   @media (max-width: $tablet-width) {
     padding: 20px 25px;
@@ -17,7 +18,7 @@
   }
 }
 
-.page-header__icon--mobile {
+.page-header__logo-icon--mobile {
   display: none;
 
   @media (max-width: $mobile-width) {
@@ -25,7 +26,7 @@
   }
 }
 
-.page-header__icon--desktop {
+.page-header__logo-icon--desktop {
   @media (max-width: $mobile-width) {
     display: none;
   }
@@ -33,6 +34,7 @@
 
 .page-header__contacts {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .page-header__contact {
@@ -80,7 +82,7 @@
 
 .page-header__button {
   display: inline-block;
-  padding: 13px 23px;
+  padding: 13px 25px;
   margin-left: 50px;
   width: 180px;
   height: 45px;
@@ -90,7 +92,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
   color: $white;
   border: 1px $white solid;
   border-radius: 5px;
