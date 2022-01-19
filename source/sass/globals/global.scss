@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -25,4 +26,12 @@ body {
 
 button {
   cursor: pointer;
+}
+
+br {
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: inline;
+  }
 }

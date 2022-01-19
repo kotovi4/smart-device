@@ -1,5 +1,17 @@
+.contacts {
+  width: 336px;
+
+  @media (max-width: 1240px) {
+    width: 344px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+  }
+}
+
 .contacts h2 {
-  margin-top: 0;
+  margin: 0 0 25px 0;
   text-transform: uppercase;
   font-family: $font-secondary;
   font-weight: 400;
@@ -7,21 +19,27 @@
   line-height: 16px;
   letter-spacing: 0.05em;
   color: $promo-bg-color;
+
+  @media (max-width: $mobile-width) {
+    margin: 31px 0 25px;
+  }
 }
 
 .contacts ul {
   display: flex;
   flex-direction: column;
   list-style: none;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 0;
   margin: 0;
   height: 100px;
-}
 
-.contacts span {
-  color: $promo-bg-color;
-  opacity: 0.5;
+  @media (max-width: $mobile-width) {
+    padding-top: 7px;
+    padding-left: 0;
+    padding-right: 60px;
+    height: auto;
+  }
 }
 
 .contacts a {

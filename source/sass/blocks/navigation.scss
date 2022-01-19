@@ -1,5 +1,5 @@
 .navigation h2 {
-  margin-top: 0;
+  margin: 0 0 25px 0;
   text-transform: uppercase;
   font-family: $font-secondary;
   font-weight: 400;
@@ -7,20 +7,33 @@
   line-height: 16px;
   letter-spacing: 0.05em;
   color: $promo-bg-color;
+
+  @media (max-width: $mobile-width) {
+    margin: 31px 0 25px;
+  }
 }
 
 .navigation ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   list-style: none;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  height: 100px;
+
+  @media (max-width: 1240px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .navigation li {
-  margin-right: 65px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 73px;
 }
 
 .navigation a {

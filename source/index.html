@@ -43,7 +43,7 @@
         <div class="promo__info">
           <h2>Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-          <a class="promo__button button" href="#">
+          <a class="promo__button button" href="#feedback">
             <span class="promo__button-desktop">Получить бесплатную консультацию</span>
             <span class="promo__button-mobile">Бесплатная консультация</span>
           </a>
@@ -58,7 +58,7 @@
             <use xlink:href="img/sprite_auto.svg#icon-watch"></use>
           </svg>
           <h3>Оперативные сроки</h3>
-          <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
+          <p>Усовершенствованная логистическая система позволяет нам <br> просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
         </li>
         <li class="advantages__item">
           <svg width="35" height="35">
@@ -68,7 +68,7 @@
           <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
         </li>
         <li class="advantages__item">
-          <svg width="36" height="31">
+          <svg width="30" height="26">
             <use xlink:href="img/sprite_auto.svg#icon-detective"></use>
           </svg>
           <h3>Полная&nbsp;конфиденциальность</h3>
@@ -79,7 +79,7 @@
             <use xlink:href="img/sprite_auto.svg#icon-tag"></use>
           </svg>
           <h3>Персонализация стоимости</h3>
-          <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
+          <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы <br> установить ту цену, которая Вас устраивает.</p>
         </li>
       </ul>
       <div class="advantages__about about">
@@ -157,8 +157,30 @@
         </ul>
       </div>
     </section>
+    <section class="feedback" id="feedback">
+      <div class="feedback__wrapper">
+        <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data" autocomplete="off">
+          <h2>Остались вопросы? Задайте их нам!</h2>
+          <p>Мы проконсультируем Вас бесплатно</p>
+          <div class="feedback__inputs">
+            <label class="visually-hidden" for="name"></label>
+            <input id="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required>
+            <label class="visually-hidden" for="tel"></label>
+            <input id="tel" type="tel" maxlength="12" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+            <textarea id="message" placeholder="Ваш вопрос"></textarea>
+          </div>
+          <div class="feedback__buttons">
+            <button class="feedback__button button" type="submit">Задать вопрос</button>
+            <label class="feedback__checkbox" for="agreement">
+              <input class="visually-hidden" id="agreement" name="agreement" type="checkbox" value="i-agree" checked required>
+              <span>Я согласен на обработку  персональных данных</span>
+            </label>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
-  <!-- <footer class="page-footer">
+  <footer class="page-footer">
     <div class="page-footer__wrapper">
       <div class="page-footer__social social">
         <a aria-label="Логотип 'Smart Device'">
@@ -191,57 +213,50 @@
           </li>
         </ul>
       </div>
-      <div class="page-footer__navigation navigation">
-        <h2>Разделы сайта</h2>
-        <ul>
-          <li>
-            <a href="#">О компании</a>
-          </li>
-          <li>
-            <a href="#">Продукты</a>
-          </li>
-          <li>
-            <a href="#">Производство печатных плат</a>
-          </li>
-          <li>
-            <a href="#">Монтаж печатных плат</a>
-          </li>
-          <li>
-            <a href="#">Комплектующие</a>
-          </li>
-          <li>
-            <a href="#">Доставка</a>
-          </li>
-          <li>
-            <a href="#">Контакты</a>
-          </li>
-        </ul>
-      </div>
-      <div class="page-footer__contacts contacts">
-        <h2>Наш офис</h2>
-        <ul>
-          <li>
-            <span>г. Мытищи, Олимпийский проспект, д.10</span>
-          </li>
-          <li>
-            <a href="tel:+74955894050">+7 (495) 589-40-50</a>
-          </li>
-          <li>
-            <a href="tel:+79250038767">+7 (925) 003-87-67</a>
-          </li>
-          <li>
-            <a href="tel:+792692608079">+7 (926) 926-080-79</a>
-          </li>
-        </ul>
+      <div class="page-footer__container">
+        <div class="page-footer__navigation navigation">
+          <h2>Разделы сайта</h2>
+          <ul>
+            <li>
+              <a href="#">О компании</a>
+              <a href="#">Продукты</a>
+              <a href="#">Производство печатных плат</a>
+              <a href="#">Монтаж печатных плат</a>
+            </li>
+            <li>
+              <a href="#">Комплектующие</a>
+              <a href="#">Доставка</a>
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__contacts contacts">
+          <h2>Наш офис</h2>
+          <ul>
+            <li>
+              <a href="#">г. Мытищи, Олимпийский проспект, д.10</a>
+            </li>
+            <li>
+              <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+            </li>
+            <li>
+              <a href="tel:+79250038767">+7 (925) 003-87-67</a>
+            </li>
+            <li>
+              <a href="tel:+792692608079">+7 (926) 926-080-79</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="page-footer__developer developer">
-      <span>Все права защищены</span>
-      <span>1999-2018 SD Service Devices</span>
-      <a href="#">Условия конфиденциальности</a>
+      <div class="developer__wrapper">
+        <span>Все права защищены</span>
+        <span>1999-2018 SD Service Devices</span>
+        <a href="#">Условия конфиденциальности</a>
+      </div>
       <a href="#">Developed by wow studio </a>
     </div>
-  </footer> -->
-
+  </footer>
 </body>
 </html>
