@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 17px 20px 15px 20px;
+  padding: 17px 20px 14px 20px;
   max-width: 1455px;
 
   @media (max-width: 1240px) {
-    padding: 14px 27px 24px;
+    padding: 22px 27px 22px;
+    border-top: 1px solid $border-color;
   }
 
   @media (max-width: $mobile-width) {
@@ -15,7 +16,7 @@
     align-items: center;
     padding: 30px 0 25px;
     margin: 0 auto;
-    width: 217px;
+    width: 100%;
   }
 
   span,
@@ -46,5 +47,9 @@
 
   @media (max-width: $mobile-width) {
     padding-top: 21px;
+  }
+
+  &:hover {
+    color: $accent;
   }
 }

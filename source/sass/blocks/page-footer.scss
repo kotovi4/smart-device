@@ -1,4 +1,5 @@
 .page-footer {
+  position: relative;
   padding-top: 65px;
   flex-shrink: 0;
   background-color: $footer-bg-color;
@@ -10,14 +11,6 @@
   @media (max-width: $mobile-width) {
     padding-top: 46px;
   }
-
-  // &::before {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 2px;
-  //   background-color: $black;
-  //   content: " ";
-  // }
 }
 
 .page-footer__wrapper {
@@ -27,14 +20,30 @@
   padding: 0 20px;
   max-width: 1456px;
 
+  &::before {
+    position: absolute;
+    content: "";
+    top: 83%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $border-color;
+  }
+
   @media (max-width: 1240px) {
     flex-direction: column;
-    padding: 0 25px;
+    margin: 0 auto 36px;
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
   }
 
   @media (max-width: $mobile-width) {
     margin: 0 auto 25px;
-    padding: 0 15px;
+    padding: 0;
   }
 }
 
@@ -45,11 +54,13 @@
 
   @media (max-width: 1240px) {
     margin-top: 39px;
+    padding: 0 25px;
     width: 100%;
   }
 
   @media (max-width: $mobile-width) {
     flex-direction: column;
     margin-top: 0;
+    padding: 0;
   }
 }

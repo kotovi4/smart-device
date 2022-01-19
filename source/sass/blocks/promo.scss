@@ -2,8 +2,9 @@
   position: relative;
   display: flex;
   margin-top: -118px;
-  padding-top: 258px;
+  // padding-top: 258px;
   min-height: 878px;
+  overflow: hidden;
 
   &::before {
     position: absolute;
@@ -37,14 +38,14 @@
   padding-left: 71px;
   margin: 0 auto;
   width: 1563px;
-  background-image: url("../img/promo-image@1x.png");
-  background-position: top right;
-  background-size: 705px 515px;
-  background-repeat: no-repeat;
+  // background-image: url("../img/promo-image@1x.png");
+  // background-position: top right;
+  // background-size: 705px 515px;
+  // background-repeat: no-repeat;
 
-  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background: url("../img/promo-image@2x.png") cover;
-  }
+  // @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  //   background: url("../img/promo-image@2x.png") cover;
+  // }
 
   @media (max-width: $tablet-width) {
     // background-position: 167% top;
@@ -53,7 +54,6 @@
 
   @media (max-width: $mobile-width) {
     padding: 0 15px;
-    // background-position: 141% top;
     background-size: 301px 220px;
   }
 }
@@ -62,8 +62,11 @@
   display: flex;
   flex-direction: column;
   width: 51%;
+  margin-top: 258px;
+  z-index: 2;
 
   @media (max-width: $tablet-width) {
+    margin-top: 0;
     padding-left: 17px;
     width: 64%;
   }
@@ -150,6 +153,11 @@
   color: $white;
   background-color: $accent;
 
+  &:hover {
+    color: $accent;
+    background-color: $white;
+  }
+
   @media (max-width: $tablet-width) {
     margin-left: 51px;
     padding: 17px 30px;
@@ -178,15 +186,24 @@
 
 .promo img {
   position: absolute;
-  top: 32%;
-  right: 9.3%;
-  width: 36.5%;
+  top: 29%;
+  right: 0;
+  width: 45.0%;
   height: auto;
+  z-index: 1;
 
   @media (max-width: $tablet-width) {
+    top: -0.5%;
+    left: 66%;
     width: auto;
     height: 340px;
-    left: 66%;
-    top: 15.5%;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 0;
+    left: auto;
+    right: -7px;
+    width: 301px;
+    height: auto;
   }
 }
