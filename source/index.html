@@ -90,8 +90,10 @@
       </ul>
       <div class="advantages__about about">
         <picture>
-
-          <img src="img/about-image.png" width="220" height="317" alt="2005 год основания компании">
+          <!-- 1x: 220px; 2x: 440px -->
+          <source type="image/webp" srcset="img/about-image@1x.webp, img/about-image@2x.webp 2x">
+          <!-- 1x: 220px; 2x: 440px -->
+          <img src="img/about-image@1x.png" srcset="img/about-image@2x.png 2x" width="220" height="317" alt="2005 год основания компании">
         </picture>
         <div class="about__wrapper">
           <h2>О компании</h2>
