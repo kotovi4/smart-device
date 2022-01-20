@@ -3,34 +3,10 @@ const modalFormName = modal.querySelector('#modal__form-name');
 const modalFormTel = modal.querySelector('#modal__form-tel');
 const modalFormMessage = modal.querySelector('#modal__form-message');
 const modalButton = modal.querySelector('.modal__button');
-const feedbackFormTel = document.querySelector('#feedback-tel');
-const feedbackFormName = document.querySelector('#feedback-name');
-const feedbackFormMessage = document.querySelector('#modal__form-message');
+const feedbackFormTel = document.querySelector('#feedback__tel');
+const feedbackFormName = document.querySelector('#feedback__name');
+const feedbackFormMessage = document.querySelector('#feedback__message');
 const feedbackButton = document.querySelector('.feedback__button');
-
-// Валидация полей формы
-if (nameInput && telInput) {
-  nameInput.addEventListener('input', function () {
-    if (nameInput.validity.patternMismatch) {
-      nameInput.setCustomValidity('Вводите только буквы');
-    } else {
-      nameInput.setCustomValidity('');
-    }
-  });
-
-  telInput.addEventListener('input', function () {
-    if (telInput.validity.patternMismatch) {
-      telInput.setCustomValidity('Введите телефон в формате +7 ХХХ ХХХ ХХ ХХ');
-    } else {
-      telInput.setCustomValidity('');
-    }
-  });
-
-  formButton.addEventListener('click', function () {
-    localStorage.setItem(nameInput.name, nameInput.value);
-    localStorage.setItem(telInput.name, telInput.value);
-  });
-}
 
 // открывает модальное окно по кнопке заказа звонка
 const pageHeaderButton = document.querySelector('.page-header__button');
@@ -59,7 +35,7 @@ modalCloseButton.addEventListener('click', function (evt) {
 })
 
 //Валидация поля телефона
-var addValuePhoneField = function (element) {
+const addValuePhoneField = function (element) {
   //ставит +7 при фокусе на поле
   if (element) {
     element.addEventListener('focus', function () {
@@ -69,7 +45,7 @@ var addValuePhoneField = function (element) {
     });
   }
 
-  // убирает +7
+  //убирает +7
   if (element) {
     element.addEventListener('blur', function () {
       if (element.value === '+7 (' || element.value.length <= 3) {
@@ -83,12 +59,13 @@ var addValuePhoneField = function (element) {
   });
 };
 
-addValuePhoneField(modalFormTel);
-addValuePhoneField(feedbackFormTel);
 
-// //Валидация полей формы
+addValuePhoneField(feedbackFormTel);
+addValuePhoneField(modalFormTel);
+
+// кастомная валидация полей формы
 const fieldValidation = function (name, tel, message, button) {
-  if (name && tel && message) {
+  if (name && tel) {
     name.addEventListener('input', function () {
       if (name.validity.patternMismatch) {
         name.setCustomValidity('Вводите только буквы');
@@ -105,36 +82,39 @@ const fieldValidation = function (name, tel, message, button) {
       }
     });
 
-    message.addEventListener('input', function () {
-      if (message.validity.patternMismatch) {
-        message.setCustomValidity('Вводите ваш вопрос');
-      } else {
-        message.setCustomValidity('');
-      }
-    });
+    button.addEventListener('submit', (evt) => {
+      evt.preventDefault();
 
-    button.addEventListener('submit', function () {
       localStorage.setItem(name.name, name.value);
       localStorage.setItem(tel.name, tel.value);
       localStorage.setItem(message.name, message.value);
     });
+
   }
 }
 
-fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
 fieldValidation(feedbackFormName, feedbackFormTel, feedbackFormMessage, feedbackButton);
+fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
 
-// // Проверка заполненности полей формы перед отправкой,
 
-// const modalForm = modal.querySelector('.modal__form');
-// modalForm.addEventListener('submit', function (evt) {
-//   if (!modal.classList.contains('modal--close')) {
-//     evt.preventDefault();
+// аккордеон на мобильном меню
+const navigationButton = document.querySelector('.navigation h2');
+const navigationList = document.querySelector('.navigation__list');
+const contactsButton = document.querySelector('.contacts h2');
+const contactsList = document.querySelector('.contacts__list');
 
-//     localStorage.setItem('modalFormName', modalFormName.value);
-//     localStorage.setItem('modalFormTel', modalFormTel.value);
-//     localStorage.setItem('modalFormMessage', modalFormMessage.value);
+navigationButton.addEventListener('click', function () {
+  navigationList.classList.remove('navigation__list--close');
 
-//     modal.classList.add('modal--close');
-//   }
-// });
+  if (!contactsList.classList.contains('contacts__list--close')) {
+    contactsList.classList.add('contacts__list--close');
+  }
+});
+
+contactsButton.addEventListener('click', function () {
+  contactsList.classList.remove('contacts__list--close');
+
+  if (!navigationList.classList.contains('navigation__list--close')) {
+    navigationList.classList.add('navigation__list--close');
+  }
+});

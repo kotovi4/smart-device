@@ -100,7 +100,7 @@
     font-family: $font-default;
     font-size: 16px;
     line-height: 22px;
-    color: $white;
+    color: transparentize($white, 0.6);
   }
 
   @media (max-width: $tablet-width) {
@@ -142,7 +142,12 @@
       font-family: $font-default;
       font-size: 16px;
       line-height: 22px;
-      color: $white;
+      color: transparentize($white, 0.6);
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid $white;
     }
 
     @media (max-width: $tablet-width) {

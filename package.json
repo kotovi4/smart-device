@@ -1,8 +1,8 @@
 {
-  "name": "bicycles",
+  "name": "smart-device",
   "private": true,
-  "description": "Велосипеды Moon // Акселератор - HTML Academy",
-  "homepage": "https://kotovi4.github.io/bicycles",
+  "description": "Smart Device // Акселератор - HTML Academy",
+  "homepage": "https://kotovi4.github.io/smart-device",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "^10.4.0",

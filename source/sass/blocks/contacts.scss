@@ -49,7 +49,7 @@
   }
 }
 
-.contacts ul {
+.contacts__list {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -59,8 +59,12 @@
   height: 100px;
 
   @media (max-width: $mobile-width) {
-    padding: 7px 60px 0 15px;
+    padding: 7px 60px 25px 15px;
     height: auto;
+
+    &--close {
+      display: none;
+    }
   }
 }
 
