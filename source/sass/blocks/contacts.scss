@@ -10,7 +10,7 @@
   }
 }
 
-.contacts h2 {
+.contacts__title {
   margin: 0 0 25px 0;
   text-transform: uppercase;
   font-family: $font-secondary;
@@ -66,6 +66,10 @@
       display: none;
     }
   }
+}
+
+.contacts__list--close .contacts__title::after {
+  content: "";
 }
 
 .contacts a {

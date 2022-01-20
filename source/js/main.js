@@ -104,7 +104,7 @@ const contactsButton = document.querySelector('.contacts h2');
 const contactsList = document.querySelector('.contacts__list');
 
 navigationButton.addEventListener('click', function () {
-  navigationList.classList.remove('navigation__list--close');
+  navigationList.classList.toggle('navigation__list--close');
 
   if (!contactsList.classList.contains('contacts__list--close')) {
     contactsList.classList.add('contacts__list--close');
@@ -112,7 +112,7 @@ navigationButton.addEventListener('click', function () {
 });
 
 contactsButton.addEventListener('click', function () {
-  contactsList.classList.remove('contacts__list--close');
+  contactsList.classList.toggle('contacts__list--close');
 
   if (!navigationList.classList.contains('navigation__list--close')) {
     navigationList.classList.add('navigation__list--close');
