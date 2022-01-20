@@ -33,8 +33,8 @@
         </svg>
         <span class="page-header__text">+7 (495) 000 52 52</span>
       </a>
-      <a class="page-header__button" href="#">заказать звонок</a>
-  </div>
+      <a class="page-header__button">заказать звонок</a>
+    </div>
   </header>
   <main class="page-main">
     <h1 class="visually-hidden">Печатные платы Smart Device</h1>
@@ -170,21 +170,21 @@
     </section>
     <section class="feedback" id="feedback">
       <div class="feedback__wrapper">
-        <form class="feedback__form" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data" autocomplete="off">
+        <form class="feedback__form" action="https://echo.htmlacademy.ru" method="POST">
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
           <div class="feedback__inputs">
-            <label class="visually-hidden" for="name"></label>
-            <input id="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="">
-            <label class="visually-hidden" for="tel"></label>
-            <input id="tel" type="tel" maxlength="12" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
-            <textarea id="message" placeholder="Ваш вопрос"></textarea>
+            <label class="visually-hidden" for="feedback-name"></label>
+            <input id="feedback-name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="">
+            <label class="visually-hidden" for="feedback-tel"></label>
+            <input id="feedback-tel" type="tel" maxlength="18" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required="">
+            <textarea id="feedback-message" placeholder="Ваш вопрос" required=""></textarea>
           </div>
           <div class="feedback__buttons">
             <button class="feedback__button button" type="submit">Задать вопрос</button>
             <label class="feedback__checkbox" for="agreement">
               <input class="visually-hidden" id="agreement" name="agreement" type="checkbox" value="i-agree" checked="" required="">
-              <span>Я согласен на обработку  персональных данных</span>
+              <span>Я согласен на обработку персональных данных</span>
             </label>
           </div>
         </form>
@@ -269,31 +269,30 @@
       <a href="#">Developed by wow studio </a>
     </div>
   </footer>
-
-  <div class="modal" id="modal">
+  <div class="modal modal--close" id="modal">
     <div class="modal__wrapper">
       <button class="modal__button-close">
         <span class="visually-hidden">Закрыть</span>
       </button>
-      <form class="modal__form" action="https://echo.htmlacademy.ru" method="post" enctype="multipart/form-data" autocomplete="off">
+      <form class="modal__form" action="https://echo.htmlacademy.ru" method="POST">
         <h2>Закажите звонок</h2>
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
         <div class="modal__inputs">
-          <label class="visually-hidden" for="modal-name"></label>
-          <input id="modal-name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="">
-          <label class="visually-hidden" for="modal-tel"></label>
-          <input id="modal-tel" type="tel" maxlength="12" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
-          <textarea id="modal-message" placeholder="Ваш вопрос"></textarea>
+          <label class="visually-hidden" for="modal__form-name"></label>
+          <input id="modal__form-name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="">
+          <label class="visually-hidden" for="modal__form-tel"></label>
+          <input id="modal__form-tel" type="tel" maxlength="18" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required="">
+          <textarea id="modal__form-message" placeholder="Ваш вопрос" required=""></textarea>
         </div>
-        <div class="modal__buttons">
-          <button class="modal__button button" type="submit">Отправить</button>
-          <label class="modal__checkbox" for="agreement">
-            <input class="visually-hidden" id="modal-agreement" name="modal-agreement" type="checkbox" value="i-agree" checked="" required="">
-            <span>Я согласен на обработку  персональных данных</span>
-          </label>
-        </div>
+        <button class="modal__button button" type="submit">Отправить</button>
+        <label class="modal__checkbox" for="modal-agreement">
+          <input class="visually-hidden" id="modal-agreement" name="modal-agreement" type="checkbox" value="i-agree" checked="" required="">
+          <span>Я согласен на обработку персональных данных</span>
+        </label>
       </form>
     </div>
   </div>
+  <script src="js/imask.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
