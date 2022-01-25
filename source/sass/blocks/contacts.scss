@@ -64,16 +64,20 @@
 }
 
 .contacts--close .contacts__list  {
-  display: none;
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .contacts--close .contacts__title::after {
-  position: absolute;
-  content: "";
-  width: 1px;
-  height: 16px;
-  right: 25px;
-  border-right: 1px solid $border-color;
+  @media (max-width: $mobile-width) {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 16px;
+    right: 25px;
+    border-right: 1px solid $border-color;
+  }
 }
 
 .contacts a {
