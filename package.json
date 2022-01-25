@@ -29,7 +29,7 @@
     "postcss-reporter": "^7.0.2",
     "posthtml-include": "^1.2.0",
     "stylelint": "^13.13.1",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "stylelint-config-htmlacademy": "^0.1.12"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",

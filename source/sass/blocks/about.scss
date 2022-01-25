@@ -20,7 +20,7 @@
 
   @media (max-width: $tablet-width) {
     left: -9px;
-    top: 7px;
+    top: 4px;
     width: 252px;
     height: 362px;
   }
@@ -73,24 +73,26 @@
   line-height: 22px;
   color: $gray;
 
-  &--mobile {
-    display: none;
-  }
-
   @media (max-width: $tablet-width) {
     margin: 9px 0 10px 2px;
 
-    &--desktop {
-      display: none;
-    }
-
     &--mobile {
-      display: block;
+      display: -webkit-box;
+      height: 90px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
     }
   }
 
   @media (max-width: $mobile-width) {
     margin: 20px 0;
+
+    &--mobile {
+      height: 172px;
+      -webkit-line-clamp: 8;
+    }
   }
 }
 

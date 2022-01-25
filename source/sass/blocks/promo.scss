@@ -37,17 +37,8 @@
   padding-left: 71px;
   margin: 0 auto;
   width: 1563px;
-  // background-image: url("../img/promo-image@1x.png");
-  // background-position: top right;
-  // background-size: 705px 515px;
-  // background-repeat: no-repeat;
-
-  // @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  //   background: url("../img/promo-image@2x.png") cover;
-  // }
 
   @media (max-width: $tablet-width) {
-    // background-position: 167% top;
     background-size: 465px 340px;
   }
 
@@ -187,7 +178,7 @@
   position: absolute;
   top: 29%;
   right: 0;
-  width: 45.0%;
+  width: 45%;
   height: auto;
   z-index: 1;
 

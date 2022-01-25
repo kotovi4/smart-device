@@ -17,6 +17,10 @@
     border-top: 1px solid $border-color;
     cursor: pointer;
 
+    &:hover {
+      background-color: $accent;
+    }
+
     &::before {
       position: absolute;
       content: "";
@@ -27,12 +31,7 @@
     }
 
     &::after {
-      position: absolute;
       content: "";
-      width: 1px;
-      height: 16px;
-      right: 25px;
-      border-right: 1px solid $border-color;
     }
   }
 }
@@ -51,11 +50,20 @@
 
   @media (max-width: $mobile-width) {
     padding: 7px 60px 25px 15px;
-
-    &--close {
-      display: none;
-    }
   }
+}
+
+.navigation--close .navigation__list  {
+  display: none;
+}
+
+.navigation--close .navigation__title::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 16px;
+  right: 25px;
+  border-right: 1px solid $border-color;
 }
 
 .navigation li {

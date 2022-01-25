@@ -102,3 +102,11 @@
   line-height: 22px;
   color: $gray;
 }
+
+.advantages__br {
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: inline;
+  }
+}

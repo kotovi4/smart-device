@@ -17,13 +17,12 @@
   padding: 60px 0 126px;
 
   @media (max-width: $tablet-width) {
-    padding: 25px 25px 126px;
-    padding: 0;
     max-width: 720px;
+    padding: 0;
   }
 
   @media (max-width: $mobile-width) {
-    padding: 25px 15px 0;
+    padding: 25px 25px 126px;
   }
 }
 
@@ -138,5 +137,6 @@
   @media (max-width: $tablet-width) {
     width: 720px;
     height: 256px;
+    object-fit: cover;
   }
 }

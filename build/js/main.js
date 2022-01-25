@@ -1,38 +1,12 @@
 const modal = document.querySelector('.modal');
-const modalFormName = modal.querySelector('#modal__form-name');
-const modalFormTel = modal.querySelector('#modal__form-tel');
-const modalFormMessage = modal.querySelector('#modal__form-message');
-const modalButton = modal.querySelector('.modal__button');
-const feedbackFormTel = document.querySelector('#feedback__tel');
-const feedbackFormName = document.querySelector('#feedback__name');
-const feedbackFormMessage = document.querySelector('#feedback__message');
-const feedbackButton = document.querySelector('.feedback__button');
-
-// открывает модальное окно по кнопке заказа звонка
-const pageHeaderButton = document.querySelector('.page-header__button');
-pageHeaderButton.addEventListener('click', function (evt) {
-  modal.classList.remove('modal--close');
-  modalFormName.focus();
-});
-
-// закрывает модальное окно тапом на ESC
-window.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 27) {
-    if (!modal.classList.contains('modal__button-close')) {
-      evt.preventDefault();
-        modal.classList.add('modal--close');
-    }
-  }
-})
-
-// закрывает модальное окно тапом на крестик
-const modalCloseButton = modal.querySelector('.modal__button-close');
-modalCloseButton.addEventListener('click', function (evt) {
-  if (!modal.classList.contains('modal--close')) {
-    evt.preventDefault();
-      modal.classList.add('modal--close');
-  }
-})
+const modalFormName = document.getElementById('user-name');
+const modalFormTel = document.getElementById('user-tel');
+const modalFormMessage = document.getElementById('form__modal-message');
+const modalButton = document.querySelector('.form__button--feedback');
+const feedbackFormTel = document.getElementById('tel');
+const feedbackFormName = document.getElementById('name');
+const feedbackFormMessage = document.getElementById('form__feedback-message');
+const feedbackButton = document.querySelector('.form__button--modal');
 
 //Валидация поля телефона
 const addValuePhoneField = function (element) {
@@ -59,9 +33,7 @@ const addValuePhoneField = function (element) {
   });
 };
 
-
 addValuePhoneField(feedbackFormTel);
-addValuePhoneField(modalFormTel);
 
 // кастомная валидация полей формы
 const fieldValidation = function (name, tel, message, button) {
@@ -81,7 +53,8 @@ const fieldValidation = function (name, tel, message, button) {
         tel.setCustomValidity('');
       }
     });
-
+  }
+  if (button) {
     button.addEventListener('submit', (evt) => {
       evt.preventDefault();
 
@@ -89,32 +62,59 @@ const fieldValidation = function (name, tel, message, button) {
       localStorage.setItem(tel.name, tel.value);
       localStorage.setItem(message.name, message.value);
     });
-
   }
-}
+};
 
 fieldValidation(feedbackFormName, feedbackFormTel, feedbackFormMessage, feedbackButton);
-fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
 
+// открывает модальное окно по кнопке заказа звонка
+const pageHeaderButton = document.querySelector('.page-header__button');
+pageHeaderButton.addEventListener('click', function () {
+  if (modal) {
+    modal.classList.remove('modal--close');
+    modalFormName.focus();
+    addValuePhoneField(modalFormTel);
+    fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
+
+    // закрывает модальное окно тапом на ESC
+    window.addEventListener('keydown', function (evt) {
+      if (evt.keyCode === 27) {
+        if (!modal.classList.contains('modal__button-close')) {
+          evt.preventDefault();
+            modal.classList.add('modal--close');
+        }
+      }
+    })
+
+    // закрывает модальное окно тапом на крестик
+    const modalCloseButton = modal.querySelector('.modal__button-close');
+    modalCloseButton.addEventListener('click', function (evt) {
+      if (!modal.classList.contains('modal--close')) {
+        evt.preventDefault();
+          modal.classList.add('modal--close');
+      }
+    })
+  }
+});
 
 // аккордеон на мобильном меню
 const navigationButton = document.querySelector('.navigation h2');
-const navigationList = document.querySelector('.navigation__list');
+const navigation = document.querySelector('.navigation');
 const contactsButton = document.querySelector('.contacts h2');
-const contactsList = document.querySelector('.contacts__list');
+const contacts = document.querySelector('.contacts');
 
 navigationButton.addEventListener('click', function () {
-  navigationList.classList.toggle('navigation__list--close');
+  navigation.classList.toggle('navigation--close');
 
-  if (!contactsList.classList.contains('contacts__list--close')) {
-    contactsList.classList.add('contacts__list--close');
+  if (!contacts.classList.contains('contacts--close')) {
+    contacts.classList.add('contacts--close');
   }
 });
 
 contactsButton.addEventListener('click', function () {
-  contactsList.classList.toggle('contacts__list--close');
+  contacts.classList.toggle('contacts--close');
 
-  if (!navigationList.classList.contains('navigation__list--close')) {
-    navigationList.classList.add('navigation__list--close');
+  if (!navigation.classList.contains('navigation--close')) {
+    navigation.classList.add('navigation--close');
   }
 });
