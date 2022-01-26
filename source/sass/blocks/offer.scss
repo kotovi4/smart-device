@@ -1,0 +1,142 @@
+.offer {
+  background-color: $promo-bg-color;
+  color: $white;
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 78px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 64px;
+  }
+}
+
+.offer__wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0 126px;
+
+  @media (max-width: $tablet-width) {
+    max-width: 720px;
+    padding: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 25px 25px 126px;
+  }
+}
+
+.offer__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (max-width: $tablet-width) {
+    max-width: 720px;
+    gap: 46px;
+  }
+
+  @media (max-width: $mobile-width) {
+    gap: 30px;
+  }
+}
+
+.offer__item {
+  position: relative;
+  display: block;
+  flex-direction: column;
+  width: 370px;
+  height: 620px;
+  cursor: pointer;
+
+  &:hover .offer__name {
+    color: $accent;
+  }
+
+  &:hover .offer__img {
+    opacity: 1;
+  }
+
+  &:hover .offer__link::after {
+    background-color: $white;
+    color: $accent;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    max-width: auto;
+    height: 256px;
+  }
+}
+
+.offer__title {
+  margin-bottom: 50px;
+  padding-left: 15px;
+  font-family: $font-secondary;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 50px;
+    padding-left: 0;
+    max-width: 613px;
+    font-size: 32px;
+    line-height: 140.62%;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin: 25px 0 41px 10px;
+    font-size: 28px;
+  }
+}
+
+.offer__link::after {
+  position: absolute;
+  content: ">";
+  right: 0;
+  bottom: 0;
+  width: 63px;
+  height: 63px;
+  line-height: 63px;
+  text-align: center;
+  color: $white;
+  background-color: $accent;
+}
+
+.offer__name {
+  position: absolute;
+  top: 29px;
+  left: 43px;
+  width: 170px;
+  font-weight: 400;
+  font-family: $font-secondary;
+  font-size: 20px;
+  line-height: 30px;
+  color: $white;
+
+  @media (max-width: $tablet-width) {
+    margin: 0;
+    top: 40px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 20px;
+    left: 35px;
+  }
+}
+
+.offer__img {
+  width: 100%;
+  opacity: 0.2;
+
+  @media (max-width: $tablet-width) {
+    width: 720px;
+    height: 256px;
+    object-fit: cover;
+  }
+}

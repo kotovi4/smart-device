@@ -1,0 +1,10 @@
+.button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 5px;
+  font-family: $font-secondary;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
