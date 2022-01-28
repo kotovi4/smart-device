@@ -37,15 +37,7 @@ addValuePhoneField(feedbackFormTel);
 
 // кастомная валидация полей формы
 const fieldValidation = function (name, tel, message, button) {
-  if (name && tel) {
-    name.addEventListener('input', function () {
-      if (name.validity.patternMismatch) {
-        name.setCustomValidity('Вводите только буквы');
-      } else {
-        name.setCustomValidity('');
-      }
-    });
-
+  if (tel) {
     tel.addEventListener('input', function () {
       if (tel.validity.patternMismatch) {
         tel.setCustomValidity('Введите телефон в формате +7 ХХХ ХХХ ХХ ХХ');
@@ -69,9 +61,13 @@ fieldValidation(feedbackFormName, feedbackFormTel, feedbackFormMessage, feedback
 
 // открывает модальное окно по кнопке заказа звонка
 const pageHeaderButton = document.querySelector('.page-header__button');
+const page = document.querySelector(`.page`);
+const formModal = document.querySelector(`.modal`);
+
 pageHeaderButton.addEventListener('click', function () {
   if (modal) {
     modal.classList.remove('modal--close');
+    page.classList.add('page--hidden');
     modalFormName.focus();
     addValuePhoneField(modalFormTel);
     fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
@@ -82,9 +78,18 @@ pageHeaderButton.addEventListener('click', function () {
         if (!modal.classList.contains('modal__button-close')) {
           evt.preventDefault();
             modal.classList.add('modal--close');
+            page.classList.remove('page--hidden');
         }
       }
     })
+
+    // закрытие по оверлею
+    formModal.addEventListener(`click`, (evt) => {
+      if (evt.target === formModal) {
+        modal.classList.add('modal--close');
+        page.classList.remove('page--hidden');
+      }
+    });
 
     // закрывает модальное окно тапом на крестик
     const modalCloseButton = modal.querySelector('.modal__button-close');
@@ -92,6 +97,7 @@ pageHeaderButton.addEventListener('click', function () {
       if (!modal.classList.contains('modal--close')) {
         evt.preventDefault();
           modal.classList.add('modal--close');
+          page.classList.remove('page--hidden');
       }
     })
   }
@@ -102,6 +108,9 @@ const navigationButton = document.querySelector('.navigation h2');
 const navigation = document.querySelector('.navigation');
 const contactsButton = document.querySelector('.contacts h2');
 const contacts = document.querySelector('.contacts');
+
+navigation.classList.add('navigation--close');
+contacts.classList.add('contacts--close');
 
 navigationButton.addEventListener('click', function () {
   navigation.classList.toggle('navigation--close');

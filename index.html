@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -169,14 +169,20 @@
     </section>
     <section class="feedback" id="feedback">
       <div class="feedback__wrapper">
+        <picture>
+          <!-- 1x: 511px; 2x: 1022px -->
+          <source type="image/webp" srcset="img/airplane-image@1x.webp, img/airplane-image@2x.webp 2x">
+          <!-- 1x: 511px; 2x: 1022px -->
+          <img class="feedback__img" src="img/airplane-image@1x.png" srcset="img/airplane-image@2x.png 2x" width="511" height="288" alt="Самолёт">
+        </picture>
         <form class="feedback__form form form--feedback" action="https://echo.htmlacademy.ru" method="POST">
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
           <div class="form__inputs form__inputs--feedback">
             <label class="visually-hidden" for="name">Имя</label>
-            <input id="name" name="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" tabindex="9" required="">
+            <input id="name" name="name" type="text" placeholder="Имя" tabindex="9" required="">
             <label class="visually-hidden" for="tel">Телефон</label>
-            <input id="tel" name="tel" type="tel" maxlength="18" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" tabindex="10" required="">
+            <input id="tel" name="tel" type="tel" minlength="14" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$" tabindex="10" required="">
             <textarea id="form__feedback-message" name="message" placeholder="Ваш вопрос" tabindex="11" required=""></textarea>
           </div>
           <div class="form__buttons">
@@ -227,7 +233,7 @@
         </ul>
       </div>
       <div class="page-footer__container">
-        <div class="page-footer__navigation navigation navigation--close">
+        <div class="page-footer__navigation navigation">
           <h2 class="navigation__title">Разделы сайта</h2>
           <ul class="navigation__list navigation__list--close">
             <li>
@@ -243,7 +249,7 @@
             </li>
           </ul>
         </div>
-        <div class="page-footer__contacts contacts contacts--close">
+        <div class="page-footer__contacts contacts">
           <h2 class="contacts__title">Наш офис</h2>
           <ul class="contacts__list">
             <li>
@@ -281,9 +287,9 @@
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
         <div class="form__inputs form__inputs--modal">
           <label class="visually-hidden" for="user-name">Имя</label>
-          <input id="user-name" name="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\s]+$" required="">
+          <input id="user-name" name="name" type="text" placeholder="Имя" required="">
           <label class="visually-hidden" for="user-tel">Телефон</label>
-          <input id="user-tel" name="tel" type="tel" maxlength="18" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required="">
+          <input id="user-tel" name="tel" type="tel" minlength="14" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{10}$" required="">
           <textarea id="form__modal-message" name="message" placeholder="Ваш вопрос" required=""></textarea>
         </div>
         <button class="form__button form__button--modal button" type="submit">Отправить</button>
