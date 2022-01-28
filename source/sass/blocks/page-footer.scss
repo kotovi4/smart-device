@@ -20,25 +20,10 @@
   padding: 0 20px;
   max-width: 1456px;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 83%;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $border-color;
-  }
-
   @media (max-width: 1240px) {
     flex-direction: column;
     margin: 0 auto 36px;
     padding: 0;
-
-    &::before {
-      display: none;
-    }
   }
 
   @media (max-width: $mobile-width) {

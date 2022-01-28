@@ -38,8 +38,10 @@
 
 .social ul {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 50px;
   padding: 0;
+  max-width: 216px;
   list-style: none;
 
   @media (max-width: 1240px) {

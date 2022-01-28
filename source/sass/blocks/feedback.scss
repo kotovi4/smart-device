@@ -1,8 +1,8 @@
 .feedback {
+  position: relative;
   padding: 62px 0 113px 0;
   color: $white;
-  background: url("../img/feedback-bg.jpg") $accent;
-  background-size: cover;
+  background-color: $accent;
 
   @media (max-width: $tablet-width) {
     padding: 54px 0 104px 0;
@@ -16,21 +16,39 @@
 
 .feedback__wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
   margin: 0 auto;
-  max-width: 1170px;
+  padding-right: 30px;
+  max-width: 1220px;
 
   &::before {
     position: absolute;
+    display: block;
     content: "";
-    left: -2%;
-    top: 14.5%;
-    width: 511px;
-    height: 288px;
-    background: url("../img/airplane-image.png") center center no-repeat;
+    top: -124px;
+    right: 59.5%;
+    width: 670px;
+    height: 641px;
+    background: url("../img/triangle.svg") no-repeat;
     background-size: cover;
+  }
 
-    @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
+    padding: 0;
+
+    &::before {
       display: none;
     }
+  }
+}
+
+.feedback__img {
+  position: relative;
+  height: auto;
+  object-fit: cover;
+
+  @media (max-width: $tablet-width) {
+    display: none;
   }
 }

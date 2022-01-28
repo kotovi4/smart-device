@@ -26,13 +26,17 @@
     background-size: 9px 6px;
   }
 
+  input[type="checkbox"]:focus + span::before {
+    background-color: transparentize($white, 0.8);
+  }
+
   @media (max-width: $mobile-width) {
     width: 100%;
   }
 
   &--feedback {
     margin: 10px 0 0 35px;
-    width: 230px;
+    width: 225px;
 
     input[type="checkbox"] + span::before {
       left: -32px;
