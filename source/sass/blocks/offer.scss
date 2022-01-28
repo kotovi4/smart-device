@@ -7,7 +7,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding-bottom: 64px;
+    padding-bottom: 34px;
   }
 }
 
@@ -41,7 +41,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    gap: 30px;
+    gap: 0;
   }
 }
 
@@ -70,6 +70,7 @@
     width: 100%;
     max-width: auto;
     height: 256px;
+    margin-bottom: 30px;
   }
 }
 
