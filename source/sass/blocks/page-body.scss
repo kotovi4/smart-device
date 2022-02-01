@@ -3,3 +3,23 @@
   flex-direction: column;
   min-height: 100%;
 }
+
+.page-body__container {
+  width: 100%;
+  min-height: 878px;
+  background: url("../img/promo-image-bg-desktop@1x.webp") top center no-repeat;
+  background-color: $promo-bg-color;
+  background-size: cover;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background: url("../img/promo-image-bg-desktop@2x.webp") cover;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 686px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-height: 647px;
+  }
+}
