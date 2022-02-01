@@ -1,15 +1,14 @@
 .promo {
   position: relative;
   display: flex;
-  margin-top: -188px;
-  min-height: 948px;
+  min-height: 760px;
   overflow: hidden;
 
   &::after {
     position: absolute;
     display: block;
     content: "";
-    top: 188px;
+    top: 0;
     left: 53.7%;
     width: 670px;
     height: 641px;
@@ -17,14 +16,14 @@
     background-size: cover;
 
     @media (max-width: $tablet-width) {
-      top: 52px;
+      top: -84px;
       left: 57%;
       width: 528px;
       height: 505px;
     }
 
     @media (max-width: $mobile-width) {
-      top: 72px;
+      top: -67px;
       left: 47.5%;
       width: 480px;
       height: 480px;
@@ -32,13 +31,13 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding-top: 135px;
-    min-height: 708px;
+    margin-top: -53px;
+    min-height: 643px;
   }
 
   @media (max-width: $mobile-width) {
-    padding-top: 138px;
-    min-height: 693px;
+    margin-top: -50px;
+    min-height: 625px;
   }
 }
 
@@ -50,12 +49,11 @@
   width: 1563px;
 
   @media (max-width: $tablet-width) {
-    background-size: 465px 340px;
+    width: auto;
   }
 
   @media (max-width: $mobile-width) {
     padding: 0 15px;
-    background-size: 301px 220px;
   }
 }
 
@@ -63,7 +61,7 @@
   display: flex;
   flex-direction: column;
   width: 51%;
-  padding: 328px 0 275px;
+  padding: 140px 0 275px;
   z-index: 2;
 
   @media (max-width: $tablet-width) {
@@ -186,7 +184,7 @@
 
 .promo img {
   position: absolute;
-  top: 327px;
+  top: 140px;
   right: 0;
   width: 45%;
   height: auto;

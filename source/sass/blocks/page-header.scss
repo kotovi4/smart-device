@@ -6,7 +6,6 @@
   padding: 31px 25px;
   width: 100%;
   max-width: 1460px;
-  z-index: 1;
 
   @media (max-width: $tablet-width) {
     padding: 20px 25px;
@@ -34,7 +33,6 @@
     display: none;
   }
 }
-
 
 .page-header__contacts {
   display: flex;
