@@ -17,6 +17,10 @@
   }
 }
 
+.page-header__logo {
+  align-self: flex-start;
+}
+
 .page-header__logo-icon--mobile {
   display: none;
 
@@ -31,6 +35,7 @@
   }
 }
 
+
 .page-header__contacts {
   display: flex;
   flex-wrap: wrap;
@@ -38,8 +43,7 @@
 
 .page-header__contact {
   display: flex;
-  align-items: center;
-  margin-left: 88px;
+  margin: 12px 0 12px 88px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
@@ -50,11 +54,14 @@
   }
 
   @media (max-width: $tablet-width) {
+    align-items: center;
     margin-left: 34px;
   }
 
   @media (max-width: $mobile-width) {
+    margin-top: 5px;
     margin-left: 23px;
+    margin-bottom: 5px;
   }
 }
 

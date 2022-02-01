@@ -64,6 +64,8 @@ const pageHeaderButton = document.querySelector('.page-header__button');
 const page = document.querySelector(`.page`);
 const formModal = document.querySelector(`.modal`);
 
+
+
 pageHeaderButton.addEventListener('click', function () {
   if (modal) {
     modal.classList.remove('modal--close');
@@ -72,13 +74,24 @@ pageHeaderButton.addEventListener('click', function () {
     addValuePhoneField(modalFormTel);
     fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
 
+    function showModal() {
+      var lastFocusedElement;
+      lastFocusedElement = document.activeElement;
+      modal.focus();
+    }
+
+    function removeModal() {
+      // Возвращаем фокус на последний элемент в фокусе
+      lastFocusedElement.focus();
+    }
+
     // закрывает модальное окно тапом на ESC
     window.addEventListener('keydown', function (evt) {
       if (evt.keyCode === 27) {
         if (!modal.classList.contains('modal__button-close')) {
           evt.preventDefault();
-            modal.classList.add('modal--close');
-            page.classList.remove('page--hidden');
+          modal.classList.add('modal--close');
+          page.classList.remove('page--hidden');
         }
       }
     })
@@ -96,8 +109,8 @@ pageHeaderButton.addEventListener('click', function () {
     modalCloseButton.addEventListener('click', function (evt) {
       if (!modal.classList.contains('modal--close')) {
         evt.preventDefault();
-          modal.classList.add('modal--close');
-          page.classList.remove('page--hidden');
+        modal.classList.add('modal--close');
+        page.classList.remove('page--hidden');
       }
     })
   }
@@ -127,3 +140,4 @@ contactsButton.addEventListener('click', function () {
     navigation.classList.add('navigation--close');
   }
 });
+

@@ -4,7 +4,7 @@
   flex-shrink: 0;
   background-color: $footer-bg-color;
 
-  @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
     padding-top: 20px;
   }
 
@@ -20,7 +20,7 @@
   padding: 0 20px;
   max-width: 1456px;
 
-  @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
     flex-direction: column;
     margin: 0 auto 36px;
     padding: 0;
@@ -37,7 +37,7 @@
   justify-content: space-between;
   width: 994px;
 
-  @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
     margin-top: 39px;
     padding: 0 25px;
     width: 100%;

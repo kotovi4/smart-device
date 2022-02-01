@@ -18,7 +18,7 @@
     background-color: $border-color;
   }
 
-  @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
     padding: 22px 27px 22px;
   }
 
@@ -41,10 +41,16 @@
   }
 }
 
+.developer__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 816px;
+}
+
 .developer__wrapper span {
   margin-right: 64px;
 
-  @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
     display: none;
   }
 }
@@ -52,7 +58,7 @@
 .developer a {
   margin-left: 70px;
 
-  @media (max-width: 1240px) {
+  @media (max-width: $tablet-width) {
     margin: 0;
   }
 
