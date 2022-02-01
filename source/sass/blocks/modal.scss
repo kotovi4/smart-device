@@ -1,5 +1,4 @@
 .modal {
-  // background-color: $accent;
   color: $white;
   position: fixed;
   width: 100%;
@@ -66,7 +65,7 @@
 
   &:hover,
   &:focus {
-    outline: none;
+    outline: 1px solid $white;
   }
 
   &:active {

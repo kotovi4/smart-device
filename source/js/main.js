@@ -61,10 +61,9 @@ fieldValidation(feedbackFormName, feedbackFormTel, feedbackFormMessage, feedback
 
 // открывает модальное окно по кнопке заказа звонка
 const pageHeaderButton = document.querySelector('.page-header__button');
-const page = document.querySelector(`.page`);
-const formModal = document.querySelector(`.modal`);
-
-
+const page = document.querySelector('.page');
+const formModal = document.getElementById('modal');
+const modalSpan = document.querySelector('.modal__span');
 
 pageHeaderButton.addEventListener('click', function () {
   if (modal) {
@@ -74,15 +73,8 @@ pageHeaderButton.addEventListener('click', function () {
     addValuePhoneField(modalFormTel);
     fieldValidation(modalFormName, modalFormTel, modalFormMessage, modalButton);
 
-    function showModal() {
-      var lastFocusedElement;
-      lastFocusedElement = document.activeElement;
-      modal.focus();
-    }
-
-    function removeModal() {
-      // Возвращаем фокус на последний элемент в фокусе
-      lastFocusedElement.focus();
+    modalSpan.onfocus = function () {
+      modalFormName.focus();
     }
 
     // закрывает модальное окно тапом на ESC
