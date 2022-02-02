@@ -36,12 +36,22 @@
 
 .page-header__contacts {
   display: flex;
+  flex-wrap: nowrap;
+}
+
+.page-header__contacts-container {
+  display: flex;
   flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  max-width: 952px;
+  list-style: none;
 }
 
 .page-header__contact {
   display: flex;
-  margin: 12px 0 12px 88px;
+  // margin: 12px 0 12px 88px;
+  margin: 13px 50px 12px 37px;
   font-size: 16px;
   line-height: 18px;
   font-weight: 400;
@@ -53,7 +63,7 @@
 
   @media (max-width: $tablet-width) {
     align-items: center;
-    margin-left: 34px;
+    margin: 0 0 0 34px;
   }
 
   @media (max-width: $mobile-width) {
@@ -91,7 +101,7 @@
 .page-header__button {
   display: inline-block;
   padding: 13px 25px;
-  margin-left: 50px;
+  // margin-left: 50px;
   width: 180px;
   height: 45px;
   vertical-align: middle;
