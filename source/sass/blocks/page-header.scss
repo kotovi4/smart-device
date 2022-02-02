@@ -42,15 +42,15 @@
 .page-header__contacts-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
-  max-width: 952px;
+  max-width: 650px;
   list-style: none;
 }
 
 .page-header__contact {
   display: flex;
-  // margin: 12px 0 12px 88px;
   margin: 13px 50px 12px 37px;
   font-size: 16px;
   line-height: 18px;
