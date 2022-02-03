@@ -15,6 +15,7 @@ const addValuePhoneField = function (element) {
     element.addEventListener('focus', function () {
       if (element.value.length < 3) {
         element.value = '+7 (';
+        element.setSelectionRange(3, 4);
       }
     });
   }
